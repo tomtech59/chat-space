@@ -1,0 +1,35 @@
+.header-bar グループを作成しました
+.wrapper
+  = render "shared/side-bar"
+  .main-chat
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box__current-group-name グループ名
+        %ul.main-header__left-box__member-list 
+          Member:
+          %li.main-header__left-box__member-list__member メンバー１
+          %li.main-header__left-box__member-list__member メンバー２
+      %a{ href: "/groups/edit"}
+        .main-header__edit-btn Edit
+
+    .main-body
+      .message
+        .message-info
+          %p.message-info__talker ユーザー
+          %p.message-info__date 2019
+        %p.message-text こんにちは
+      .message
+        .message-info
+          %p.message-info__talker ユーザー
+          %p.message-info__date 2019
+        %p.message-text こんにちは
+    
+    .form
+      .message-form
+        .input-box
+          %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
+          %label.input-box__image{for: "message_image"}
+            =fa_icon "image"
+            %input#message_image.input-box__image__file{name: "message[image]", type: "file"}/
+          .input-box__submit-btn Send
+

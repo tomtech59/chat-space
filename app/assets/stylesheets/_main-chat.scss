@@ -1,0 +1,149 @@
+//最上部
+.header-bar {
+  background-color: $blue;
+  height: 20px;
+  line-height: 20px;
+  width: 100%;
+  color: $white;
+  text-align: center;
+}
+//画面全体
+.wrapper {
+  display: flex;
+  
+
+  //右カラム全体
+  .main-chat {
+    float: right;
+    width: calc(100vw - 300px);
+    box-sizing: border-box;
+
+    .main-header {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      height: 100px;
+      padding: 0 40px;
+      border-bottom: solid 1px;
+      border: #eeeeee;
+    
+      .main-header__left-box {
+        margin-top: 35px;
+        box-sizing: border-box;
+      }
+
+        .main-header__left-box__current-group-name {
+          font-size: 20px;
+          color: #333333;
+          margin-bottom: 15px;
+        }
+
+        .main-header__left-box__member-list {
+          display: flex;
+          font-size: 12px;
+          color: #999999;
+
+          &__member {
+            
+          }
+        }
+      &__edit-btn {
+        position: absolute;
+        right: 40px;
+        padding: 0 20px;
+        height: 40px;
+        border: solid 1px $blue;
+        line-height: 40px;
+        margin-top: 28px;
+        font-weight: inherit;
+        color: $blue;
+      }
+    }
+    //右カラム真ん中
+    .main-body {
+      background-color: #fafafa;
+      padding: 46px 40px;
+      height: calc(100vh - 190px);
+      overflow: scroll;
+      box-sizing: border-box;
+    }
+      .message {
+        padding-bottom: 40px;
+      }
+
+        .message-info {
+          display: flex;
+          padding-bottom: 10px;
+
+          &__talker {
+            color: $gray;
+            font-weight: bold;
+            font-size: 16px;
+            padding-right: 10px;
+          }
+
+          &__date {
+            font-size: 12px;
+            color: #999999;
+          }
+        }
+
+        .message-text {
+          color: $gray;
+          font-size: 14px;
+        }
+
+    //右カラム下部
+    .form {
+      height: 90px;
+      padding: 20px 40px;
+      background-color: #ddd;
+      color: $white;
+      box-sizing: border-box;
+    
+      .message-form {
+        display: flex;
+        box-sizing: border-box;
+      
+        .input-box {
+          display: flex;
+          position: relative;
+          color: $gray;
+          width: 100%;
+
+          &__text {
+            font-size: 16px;
+            height: 50px;
+            width: 100%;
+            padding: 0 40px 0 10px;
+          }
+
+          &__image {
+            position: absolute;
+            left: 911px;
+            font-size: 1.3rem;
+            color: black;
+            line-height: 50px;
+            
+
+            &__file {
+              display: none;
+            }
+          }
+
+          &__submit-btn {
+            background-color: $blue;
+            padding: 0 30px;
+            margin-left: 15px;
+            height: 50px;
+            line-height: 50px;
+            border: solid 1px $blue;
+            text-decoration: none;
+            color: $white;
+            font-weight: inherit;
+          }
+        }
+      }
+    }
+  }
+}

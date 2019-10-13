@@ -1,0 +1,21 @@
+.side-bar
+  .side-header
+    .side-header__box
+      %p.side-header__box__user-name
+        ユーザーネーム
+        
+      %ul.side-header__box__menu
+        %li.side-header__box__menu__new-group
+          %a{ href: "/groups/new"}
+            =fa_icon "pencil-square-o"
+        %li.side-header__box__menu__edit
+          %a{ href: "/users/edit"}
+            %i.fa.fa-cog
+        
+  .side-groups
+    .side-group
+      .side-group__group-name グループ名1
+      .side-group__message メッセージ1
+    .side-group
+      .side-group__group-name グループ名2
+      .side-group__message メッセージ2

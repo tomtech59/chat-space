@@ -1,0 +1,67 @@
+//左カラム全体
+.side-bar {
+  width: 300px;
+  color: $white;
+  float: left;
+  height: 100%;
+  font-weight: bold;
+
+  //左カラム上部
+  .side-header {
+    display: flex;
+    background-color: #253141;
+    height: 100px;
+    padding: 0 20px;
+    align-items: center;
+
+    &__box {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      &__user-name {
+        font-size: 16px;
+
+      }
+
+      &__menu {
+        display: flex;
+
+        .fa.fa-pencil-square-o {
+          color: $white;
+        }
+
+        &__edit {
+          padding-left: 5px;
+        }
+
+        .fa.fa-cog {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  //左カラム下部
+  .side-groups {
+    background-color: #2f3e51;
+    width: 100%;
+    height: calc(100vh - 100px);
+    padding: 20px 20px 0;
+    box-sizing: border-box;
+
+    .side-group {
+      font-weight: bold;
+      padding-bottom: 40px;
+
+      &__group-name {
+        font-size: 15px;
+        padding-bottom: 5px;
+      }
+      
+      &__message {
+        font-size: 11px;
+      }
+    }
+  }
+}
