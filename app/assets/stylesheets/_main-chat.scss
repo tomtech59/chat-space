@@ -29,26 +29,23 @@
       border: #eeeeee;
       
     
-      .main-header__left-box {
+      &__left-box {
         margin-top: 35px;
         box-sizing: border-box;
-      }
 
-        .main-header__left-box__current-group-name {
+        &__current-group-name {
           font-size: 20px;
           color: #333333;
           margin-bottom: 15px;
         }
 
-        .main-header__left-box__member-list {
+        &__member-list {
           display: flex;
           font-size: 12px;
           color: #999999;
-
-          &__member {
-            
-          }
         }
+      }
+      
       &__edit-btn {
         position: absolute;
         right: 40px;
