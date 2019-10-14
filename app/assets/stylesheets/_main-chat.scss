@@ -7,6 +7,7 @@
   color: $white;
   text-align: center;
 }
+
 //画面全体
 .wrapper {
   display: flex;
@@ -26,6 +27,7 @@
       padding: 0 40px;
       border-bottom: solid 1px;
       border: #eeeeee;
+      
     
       .main-header__left-box {
         margin-top: 35px;
@@ -63,7 +65,7 @@
     .main-body {
       background-color: #fafafa;
       padding: 46px 40px;
-      height: calc(100vh - 190px);
+      height: calc(100vh - 210px);
       overflow: scroll;
       box-sizing: border-box;
     }

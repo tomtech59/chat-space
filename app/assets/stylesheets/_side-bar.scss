@@ -3,7 +3,6 @@
   width: 300px;
   color: $white;
   float: left;
-  height: 100%;
   font-weight: bold;
 
   //左カラム上部
@@ -46,7 +45,7 @@
   .side-groups {
     background-color: #2f3e51;
     width: 100%;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 120px);
     padding: 20px 20px 0;
     box-sizing: border-box;
 
