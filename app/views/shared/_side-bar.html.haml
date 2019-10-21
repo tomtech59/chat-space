@@ -13,9 +13,9 @@
             = fa_icon "cog", class: "icon"
         
   .side-groups
-    .side-group
-      - current_user.groups.each do |group|
-        = link_to '#' do
+    - current_user.groups.each do |group|
+      .side-group
+        = link_to group_messages_path(group) do
           .side-group__group-name 
             = group.name
           .side-group__message 
