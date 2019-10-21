@@ -1,19 +1,8 @@
-//最上部
-.header-bar {
-  background-color: $light_blue;
-  height: 20px;
-  line-height: 20px;
-  width: 100%;
-  color: $white;
-  text-align: center;
-}
-
 //画面全体
 .wrapper {
   display: flex;
   
-
-  //右カラム全体
+//右カラム全体
   .main-chat {
     float: right;
     width: calc(100vw - 300px);
@@ -62,7 +51,7 @@
     .main-body {
       background-color: #fafafa;
       padding: 46px 40px;
-      height: calc(100vh - 210px);
+      height: calc(100vh - 190px);
       overflow: scroll;
       box-sizing: border-box;
     }

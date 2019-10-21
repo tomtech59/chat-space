@@ -45,22 +45,20 @@
   .side-groups {
     background-color: #2f3e51;
     width: 100%;
-    height: calc(100vh - 120px);
-    padding: 20px 20px 0;
+    height: calc(100vh - 100px);
+    padding: 0 20px;
     box-sizing: border-box;
 
     .side-group {
+      color: $white;
       font-weight: bold;
-      padding-bottom: 40px;
-
+      padding: 20px 0 40px;
+    }
       &__group-name {
         font-size: 15px;
-        padding-bottom: 5px;
       }
-      
       &__message {
         font-size: 11px;
       }
-    }
   }
 }

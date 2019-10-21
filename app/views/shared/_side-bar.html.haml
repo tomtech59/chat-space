@@ -14,10 +14,9 @@
         
   .side-groups
     .side-group
-      = link_to '#' do
-        .side-group__group-name グループ名1
-        .side-group__message メッセージ1
-    .side-group
-      = link_to '#' do
-        .side-group__group-name グループ名2
-        .side-group__message メッセージ2
+      - current_user.groups.each do |group|
+        = link_to '#' do
+          .side-group__group-name 
+            = group.name
+          .side-group__message 
+            メッセージはまだありません
