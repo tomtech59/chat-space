@@ -6,18 +6,17 @@
         
       %ul.side-header__box__menu
         %li.side-header__box__menu__new-group
-          = link_to '#' do
+          = link_to new_group_path do
             = fa_icon "pencil-square-o"
         %li.side-header__box__menu__edit
           = link_to edit_user_path(current_user) do
             = fa_icon "cog", class: "icon"
         
   .side-groups
-    .side-group
-      = link_to '#' do
-        .side-group__group-name グループ名1
-        .side-group__message メッセージ1
-    .side-group
-      = link_to '#' do
-        .side-group__group-name グループ名2
-        .side-group__message メッセージ2
+    - current_user.groups.each do |group|
+      .side-group
+        = link_to group_messages_path(group) do
+          .side-group__group-name 
+            = group.name
+          .side-group__message 
+            メッセージはまだありません
