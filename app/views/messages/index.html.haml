@@ -3,32 +3,25 @@
   .main-chat
     .main-header
       .main-header__left-box
-        %h2.main-header__left-box__current-group-name グループ名
+        %h2.main-header__left-box__current-group-name 
+          = @group.name
         %ul.main-header__left-box__member-list 
           Member:
-          %li.main-header__left-box__member-list__member メンバー１
-          %li.main-header__left-box__member-list__member メンバー２
+          %li.main-header__left-box__member-list__member 
+          - @group.users.each do |user|
+            = user.name
       = link_to edit_group_path(@group) do
         .main-header__edit-btn Edit
 
-    .main-body
-      .message
-        .message-info
-          %p.message-info__talker ユーザー
-          %p.message-info__date 2019
-        %p.message-text こんにちは
-      .message
-        .message-info
-          %p.message-info__talker ユーザー
-          %p.message-info__date 2019
-        %p.message-text こんにちは
-    
+    .messages
+      = render partial: 'message', collection: @messages
+
     .form
-      .message-form
-        .input-box
-          %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
-          %label.input-box__image{for: "message_image"}
-            =fa_icon "image"
-            %input#message_image.input-box__image__file{name: "message[image]", type: "file"}/
-          .input-box__submit-btn Send
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
 
