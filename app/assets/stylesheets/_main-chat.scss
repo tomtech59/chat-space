@@ -1,12 +1,11 @@
 //画面全体
 .wrapper {
-  display: flex;
-  
 //右カラム全体
   .main-chat {
     float: right;
     width: calc(100vw - 300px);
     box-sizing: border-box;
+    height: 100vh;
 
     .main-header {
       position: relative;
@@ -53,6 +52,7 @@
       box-sizing: border-box;
       padding: 46px 40px 0;
       height: calc(100% - 100px - 90px);
+      overflow: scroll;
       .message {
         .upper-message {
           display: flex;
