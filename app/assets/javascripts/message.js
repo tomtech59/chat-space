@@ -1,5 +1,6 @@
 $(function(){
   function buildMessage(message){
+    var image = (message.image)? (message.image) : "";
     var html = `<div class="message">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
@@ -9,19 +10,20 @@ $(function(){
                       ${message.created_at}
                     </div>
                   </div>
-                    <div class="lower-message">
-                      <p class="lower-message__content">
-                        ${message.content}
-                      </p>
-                    </div>
+                  <div class="lower-message">
+                    <p class="lower-message__content">
+                      ${message.content}
+                    </p>
+                  </div>
+                  <img src= ${message.image}>
                   </div>`
-    return html;
+              return html;
   }
 
-  // function scroll(){
-    // $('.messages').animate({scrollTop:$('.message')[0].scrollHeight},"fast");
-  // }
-
+  function scroll(){
+    $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight},"fast");
+  }
+  
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -38,11 +40,11 @@ $(function(){
       var html = buildMessage(message);
       $('.messages').append(html)
       $('.form__message').val('')
-      $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight},"fast");
+      scroll()
       $('.form__submit').prop('disabled',false)
     })
     .fail(function(message){
-      alert('投稿できぬ');
+      alert('むりやで');
     })
     return false;
   })
