@@ -1,6 +1,6 @@
 $(function(){
   function buildMessage(message){
-    var image = (message.image)? (message.image) : "";
+    var image = (message.image)? `<img src= ${message.image}>` : "";
     var html = `<div class="message">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
@@ -15,7 +15,7 @@ $(function(){
                       ${message.content}
                     </p>
                   </div>
-                  <img src= ${message.image}>
+                  ${image}
                   </div>`
               return html;
   }
@@ -23,7 +23,7 @@ $(function(){
   function scroll(){
     $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight},"fast");
   }
-  
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -38,10 +38,10 @@ $(function(){
     })
     .done(function(message){
       var html = buildMessage(message);
-      $('.messages').append(html)
-      $('.form__message').val('')
+      $('.messages').append(html);
       scroll()
       $('.form__submit').prop('disabled',false)
+      $('#new_message')[0].reset();
     })
     .fail(function(message){
       alert('むりやで');
