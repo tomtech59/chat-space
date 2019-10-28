@@ -1,12 +1,17 @@
 //画面全体
+*{
+  box-sizing: border-box;
+}
 .wrapper {
+
+}
 //右カラム全体
   .main-chat {
-    float: right;
+    float: left;
     width: calc(100vw - 300px);
     box-sizing: border-box;
     height: 100vh;
-
+  }
     .main-header {
       position: relative;
       display: flex;
@@ -15,7 +20,7 @@
       padding: 0 40px;
       border-bottom: solid 1px;
       border: #eeeeee;
-      
+      overflow: scroll;
     
       &__left-box {
         margin-top: 35px;
@@ -45,39 +50,38 @@
         font-weight: inherit;
         color: $light_blue;
       }
-    }
+    }  
     //右カラム真ん中
     .messages {
       background-color: #FAFAFA;
-      box-sizing: border-box;
       padding: 46px 40px 0;
-      height: calc(100% - 100px - 90px);
+      height: calc(100vh - 190px);
       overflow: scroll;
+    }
       .message {
-        .upper-message {
-          display: flex;
-          &__user-name {
-            color: black;
-            font-size: 16px;
-            font-weight: bold;
-          }
-          &__date {
-            color: $gray;
-            font-size: 12px;
-            padding-left: 10px;
-          }
+        
+      }
+      .upper-message {
+        display: flex;
+        &__user-name {
+          color: black;
+          font-size: 16px;
+          font-weight: bold;
         }
-        .lower-message {
-          margin-top: 10px;
-          &__content {
-            color: black;
-            font-size: 14px;
-            margin-bottom: 40px;
-          }
+        &__date {
+          color: $gray;
+          font-size: 12px;
+          padding-left: 10px;
         }
       }
-    }
-
+      .lower-message {
+        margin-top: 10px;
+        &__content {
+          color: black;
+          font-size: 14px;
+          margin-bottom: 40px;
+        }
+      }
     //右カラム下部
     .form {
       background-color: #DDDDDD;
@@ -114,7 +118,7 @@
         padding: 0 30px;
       }
     }
-  }
-}
+  
+
 
   
