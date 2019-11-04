@@ -1,24 +1,24 @@
 $(function(){
   function buildMessage(message){
     var image = (message.image)? `<img src= ${message.image}>` : "";
-    var html = `<div class="message">
+    var html = `<div class="message" data-id="${message.id}"> 
                   <div class="upper-message">
                     <div class="upper-message__user-name">
                       ${message.user_name}
                     </div>
                     <div class="upper-message__date">
-                      ${message.created_at}
+                      ${message.date}
                     </div>
                   </div>
-                  <div class="lower-message">
+                  <div class="lower-meesage">
                     <p class="lower-message__content">
                       ${message.content}
                     </p>
+                    ${image}
                   </div>
-                  ${image}
-                  </div>`
-              return html;
-  }
+                </div>`
+return html;
+}
 
   function scroll(){
     $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight},"fast");
@@ -48,4 +48,26 @@ $(function(){
     })
     return false;
   })
+
+  var reloadMessages = function() {
+    if(location.href.match(/messages/)){
+      var last_message_id = $('.message').data('id').last();
+      $.ajax({
+        url: 'api/messages',
+        type: 'get',
+        dataType: 'json',
+        data: {id: last_message_id}
+      })
+      .done(function(messages) {
+        var html = buildHTML(data);
+          $('.messages').append(html);
+          $("form")[0].reset();
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+          $('.form__submit').prop('disabled', false);
+        })
+      .fail(function() {
+        alert("お前にはできない。諦めろ。");
+      });
+    };
+  };
 });
