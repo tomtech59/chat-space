@@ -47,8 +47,6 @@
 
   //自動更新
     var reloadMessages = function() {
-      console.log(1)
-      // debugger;
       if (window.location.href.match(/\/groups\/\d+\/messages/)){
         var last_message_id = $('.message:last').data("message-id");
         $.ajax({
@@ -59,8 +57,7 @@
         })
         .done(function(messages) {
             messages.forEach(function(message){
-              insertHTML = buildHTML(message);
-              $('.messages').append(insertHTML);
+              $('.messages').append(buildHTML(message));
               $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, "fast");
             })
         })
