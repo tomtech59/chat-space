@@ -41,7 +41,7 @@
         $('.form__submit').prop('disabled',false)
       })
       .fail(function(message){
-        alert('むり');
+        alert('むりです');
       });
     });
 
