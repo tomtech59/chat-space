@@ -62,7 +62,7 @@
             })
         })
         .fail(function() {
-          alert("むり");
+          alert("むりです");
         });
     }
   };
