@@ -2,9 +2,6 @@
 *{
   box-sizing: border-box;
 }
-.wrapper {
-
-}
 //右カラム全体
   .main-chat {
     float: left;
@@ -58,9 +55,6 @@
       height: calc(100vh - 190px);
       overflow: scroll;
     }
-      .message {
-        
-      }
       .upper-message {
         display: flex;
         &__user-name {
