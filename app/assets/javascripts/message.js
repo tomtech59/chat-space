@@ -41,7 +41,7 @@
         $('.form__submit').prop('disabled',false)
       })
       .fail(function(message){
-        alert('むりです');
+        alert('メッセージを入力してください');
       });
     });
 
@@ -62,7 +62,7 @@
             })
         })
         .fail(function() {
-          alert("むりです");
+          alert("メッセージを入力してください");
         });
     }
   };

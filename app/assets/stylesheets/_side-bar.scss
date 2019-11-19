@@ -3,7 +3,6 @@
   width: 300px;
   color: $white;
   float: left;
-  font-weight: bold;
   height: 100vh;
 
   //左カラム上部
@@ -12,6 +11,7 @@
     background-color: #253141;
     height: 100px;
     padding: 0 20px;
+    font-weight: bold;
     align-items: center;
 
     &__box {
@@ -51,7 +51,6 @@
     box-sizing: border-box;
     overflow: scroll;
     .side-group {
-      font-weight: bold;
       padding: 20px 0 40px;
       &__group-name {
         color: $white;
