@@ -12,7 +12,7 @@ $(function(){
   function addNoUser() {
     var html = `
       <div class="chat-group-user clearfix">
-        <p class="chat-group-user__name">そんなユーザーおらんで</p>
+        <p class="chat-group-user__name">一致するユーザーが見つかりません</p>
       </div>
     `;
     $("#user-search-result").append(html);
@@ -51,7 +51,7 @@ $(function(){
         }
       })
       .fail(function() {
-        alert("むりー");
+        alert("ユーザー検索に失敗しました");
       });
   });
   $(document).on("click", ".chat-group-user__btn--add", function() {
@@ -84,7 +84,7 @@ $(function(){
 
   //追加ボタンが押されることによって削除のHTMLが追加される。
   function addDeleteUser(user_name, user_id){
-//なんやこれ、意味不
+//意味不
     var html = `
               <div class="chat-group-user clearfix" user_id="${user_id}">
                 <p class="chat-group-user__name">${user_name}</p>
@@ -119,7 +119,7 @@ $(function(){
         }
       })
     .fail(function() {
-      alert('むりー')
+      alert('')
     })
   });
 
