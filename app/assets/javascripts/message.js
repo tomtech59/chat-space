@@ -1,23 +1,23 @@
 $(document).on('turbolinks:load',function(){
-    function buildHTML(message){
-      var content = (message.content)? `${ message.content }` : "";
-      var image = (message.image.url)? `<img class="lower-message__image" src="${message.image.url}">` : "";
-      var html = `<div class="message" data-message-id="${message.id}"> 
-                    <div class="upper-message">
-                      <div class="upper-message__user-name">
-                        ${message.user_name}
-                      </div>
-                      <div class="upper-message__date">
-                        ${message.created_at}
-                      </div>
+  function buildHTML(message){
+    var content = (message.content)? `${ message.content }` : "";
+    var image = (message.image.url)? `<img class="lower-message__image" src="${message.image.url}">` : "";
+    var html = `<div class="message" data-message-id="${message.id}"> 
+                  <div class="upper-message">
+                    <div class="upper-message__user-name">
+                      ${message.user_name}
                     </div>
-                    <div class="lower-meesage">
-                      <p class="lower-message__content">
-                        ${content}
-                      </p>
-                      ${image}
+                    <div class="upper-message__date">
+                      ${message.created_at}
                     </div>
-                  </div>`
+                  </div>
+                  <div class="lower-meesage">
+                    <p class="lower-message__content">
+                      ${content}
+                    </p>
+                    ${image}
+                  </div>
+                </div>`
   return html;
   }
 
