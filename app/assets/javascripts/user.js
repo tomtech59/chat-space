@@ -1,4 +1,4 @@
-$(document).on('turbolinks:render',function(){
+$(function(){
   function addUser(user) {
     var html = `
       <div class="chat-group-user clearfix">
